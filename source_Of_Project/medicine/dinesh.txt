@@ -1,0 +1,4 @@
+Medicine:dinesh
+use:dinesh
+Experdate:12/3/2030
+Stock:299

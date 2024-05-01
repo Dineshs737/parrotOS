@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include"./lib.h"
 
-medicine *medicineInput;
+medicine medicineInput;
 
 
 int main(int argc, char const *argv[])
@@ -25,12 +25,12 @@ switch(choice)
     case 1:
     printf("\n\n##########    Enter the data    ############\n\n");
     printf("Enter medicine name :");
-    scanf("%s",medicineInput->name);
+    scanf("%s",medicineInput.name);
     printf("Enter use of medicine :");
-    scanf("%s",medicineInput->use);
+    scanf("%s",medicineInput.use);
     printf("Enter the experdate day / month / year :");
-    scanf("%d %d %d",medicineInput->date.day,medicineInput->date.month,medicineInput->date.year);
-   // insertAtBeginning(&medicineInput);
+    scanf("%d %d %d",medicineInput.date.day,medicineInput.date.month,medicineInput.date.year);
+    insertAtBeginning(medicineInput);
     break;
    // case 2: display();break;
 
@@ -39,11 +39,11 @@ switch(choice)
     scanf("%d",&pos);
     printf("\n\n##########    Enter the data    ############\n\n");
     printf("Enter medicine name :");
-    scanf("%s",medicineInput->name);
+    scanf("%s",medicineInput.name);
     printf("Enter use of medicine :");
-    scanf("%s",medicineInput->use);
+    scanf("%s",medicineInput.use);
     printf("Enter the experdate day / month / year :");
-    scanf("%d %d %d",medicineInput->date.day,medicineInput->date.month,medicineInput->date.year);
+    scanf("%d %d %d",medicineInput.date.day,medicineInput.date.month,medicineInput.date.year);
     if(pos<0){
         printf("\nInvalid position\n");
     }
@@ -62,4 +62,4 @@ switch(choice)
 }
 }
     return 0;
-}
+}//////////////////////////////////

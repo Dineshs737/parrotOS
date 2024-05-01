@@ -1,0 +1,5 @@
+Suggestion ID is : r0001
+Doctor ID is : 00001
+Pecint ID is : 00000
+prescription : sadasd
+prescription : qdsdsa

@@ -1,0 +1,4 @@
+Medicine:penadol
+use:Experdate:
+Stock:10
+price:800.000000

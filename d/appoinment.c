@@ -8,6 +8,7 @@
 
 typedef struct {
     int id;
+    int doctor_ID;
     char patientName[100];
     char date[11]; 
     char time[6]; 

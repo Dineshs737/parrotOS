@@ -1,4 +1,7 @@
 #include<string.h>
+#include<stdlib.h>
+// #include<string.h>
+
 void medicalData();
 
 struct DateInfo{
@@ -15,8 +18,11 @@ char name[30];
 char use[200];
 Date date;
 int stock;
-struct  medicineData* medicinePtr;
+struct  medicineData* next;
 
 };typedef struct medicineData medicine;
 
-medicine *head;
+medicine *head=NULL;
+
+
+void insertAtBeginning(medicine mediData);

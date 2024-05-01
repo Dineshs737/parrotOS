@@ -26,8 +26,8 @@ struct TreatmentRecord {
     int doctor_id;
     char diagnosis[100];
     char prescription[100];
-};
-
+} ;
+typedef struct TreatmentRecord Treartment;
 
 struct Doctor doctors[MAX_DOCTORS];
 struct Patient patients[MAX_PATIENTS];
