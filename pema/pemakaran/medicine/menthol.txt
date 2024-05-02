@@ -1,0 +1,5 @@
+Medicine:menthol
+use:dw
+Experdate:6/4/2024
+Stock:120
+price:400.000000
