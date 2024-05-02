@@ -1,0 +1,5 @@
+TreartmentID is:dineshpema
+DoctorID is:pema
+PecintID is:dinesh
+prescription : acjhcdsckhn
+prescription : cakmdlkjcx

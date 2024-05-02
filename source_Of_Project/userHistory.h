@@ -62,7 +62,7 @@ void printUserAllHistory(){
 
 }
 
-void petientHistoryUsingId(char user_Id[]){
+void petientHistoryUsingName(char user_Id[]){
     char filename[20]="./userHistory/";
     
 

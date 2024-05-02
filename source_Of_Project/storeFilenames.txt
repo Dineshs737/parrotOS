@@ -1,8 +1,0 @@
-
-./Suggestion/0001.txt
-./Suggestion/0002.txt
-./Suggestion/0001.txt
-./Treartment/t0001.txt
-./Treartment/t0002.txt
-./Treartment/t003.txt
-./Treartment/t004.txt

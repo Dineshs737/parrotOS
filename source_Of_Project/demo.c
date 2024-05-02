@@ -3,8 +3,8 @@
 //#include"./pecint.h"
 //#include"./lib.h"
 //#include "./Suggestion.h"
-//#include"./Treartment.h"
-#include"./userHistory.h"
+#include"./Treartment.h"
+//#include"./userHistory.h"
 
 int main(int argc, char const *argv[])
 {
@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
   // char lines[] ="user entered pass word";
   // userWriteHistory(lines);
   
-   HistoryDatas();
+   //HistoryDatas();
     // fileLoadUp();
     // DoctorSuggestion();
  // StoreTreartment();
@@ -24,6 +24,9 @@ int main(int argc, char const *argv[])
  // fileLoadUpMedicine();
    //MedicineUpdate();
    //int n=3;printf("%d",sizeof(n));
+ // StoreTreartment("dinesh","pema");
+// fileLoadUpTreartment();
+TreartmentDataSplit();
     
     return 0;
 }

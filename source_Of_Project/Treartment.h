@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+
 struct petientInfo{
     char name[30];
     char id[6];
@@ -38,9 +39,9 @@ typedef struct {
 
 
 struct TreatmentRecord {
-    char record_id[6];
-    char patient_id[6];
-    char doctor_id[6];
+    char record_id[300];
+    char patient_id[50];
+    char doctor_id[50];
     char diagnosis[100];
     char prescription[100];
     struct TreatmentRecord *next;
@@ -52,94 +53,31 @@ int count =0;
 
  //====+====+ copy the code from  lib.h =====+=====+=====
 
-
-
-
-
- void insertAtBeginning(Treartment *treartmentInput){
-
-    
-    Treartment* newTreatment =(Treartment*)malloc(sizeof(Treartment));
-    if(newTreatment==NULL) printf("out of memory");
-    printf("\n\ncreated newMedicine \n\n");
-   /*strcpy(newTreatment->record_id , treartmentInput->record_id);
-    strcpy(newTreatment->doctor_id , treartmentInput->doctor_id);
-    strcpy(newTreatment->patient_id, treartmentInput->patient_id);*/
-    // newTreatment->record_id = treartmentInput->record_id;
-    // newTreatment->doctor_id = treartmentInput->doctor_id;
-    // newTreatment->patient_id = treartmentInput->patient_id;
-
-    strcpy(newTreatment->diagnosis, treartmentInput->diagnosis);
-    strcpy(newTreatment->prescription, treartmentInput->prescription);
-   
-
-
-    if(head==NULL){
-      newTreatment->next =NULL;
-        head =newTreatment;
-    }
-    else{
-        newTreatment ->next =head;
-        head =newTreatment;
-
-   
-
-    }
-
-
-
- }
-
- void  instertPosition(Treartment *treartmentInput,int pos){
-
-    printf("\nRecord ID: %s\n", treartmentInput->record_id);
-       
-    //printf("%d",pos);
-    count +=(pos+1);
-    if(pos==0){
-        insertAtBeginning(treartmentInput);
-    }
-
-        
-    int i=1;
-   Treartment* newTreatment =(Treartment*)malloc(sizeof(Treartment));
-    if(newTreatment==NULL) printf("out of memory");
-
-
-
-    strcpy(newTreatment->diagnosis, treartmentInput->diagnosis);
-    strcpy(newTreatment->prescription, treartmentInput->prescription);
-    Treartment *temp =head;
-    for(i=1;i<=pos-1;i++){
-        temp= temp->next;
-        if(temp==NULL){
-            printf("Invalid position lsat \n");
-            return;
-        }
-    }
-    
-    newTreatment->next =temp->next;
-    temp->next = newTreatment;
-       
-}
-
-
-void StoreTreartment(){
+void StoreTreartment(char p_name[],char d_name[]){
     Treartment storeTreat;
-    char filename[20]="./Treartment/";
-    printf("Enter Suggestio ID :");
-    scanf("%s",storeTreat.record_id);
-    strcat(filename,storeTreat.record_id);
+    char filename[256]="./Treartment/";
+    
+    strcat(filename,p_name);
+    strcat(filename,d_name);
     strcat(filename,".txt");
     FILE *storefilename=NULL;
     if(storefilename =fopen("./storeTreartment.txt","a")){fprintf(storefilename,"%s\n",filename); fclose(storefilename);}
 
     FILE *file =NULL;
     if(file=fopen(filename,"a")){
-        fprintf(file,"Suggestion ID is : %s\n",storeTreat.record_id);
-        fprintf(file,"Doctor ID is : %s\n","00001");
-        fprintf(file,"Pecint ID is : %s\n","00000");
-        printf("Enter the Enter Diagnosis :");
+       
+        strcat(storeTreat.record_id,p_name);
+        strcat(storeTreat.record_id,d_name);
+          fprintf(file,"TreartmentID is:%s\n",storeTreat.record_id);
+          strcpy(storeTreat.doctor_id,d_name);
+          fprintf(file,"DoctorID is:%s\n",storeTreat.doctor_id);
+        strcpy(storeTreat.patient_id,p_name);
+        
+       fprintf(file,"PecintID is:%s\n",storeTreat.patient_id);
+        
+        
+       
+        printf("Enter the Enter Diagnosis:");
         scanf("%s",storeTreat.diagnosis);
         scanf("%[^\n]",storeTreat.diagnosis);
         scanf("%[^\n]",storeTreat.diagnosis);
@@ -182,3 +120,147 @@ void StoreTreartment(){
     }
    }
     
+
+    void petientHistoryUsingName(char user_Id[]){
+    char filename[20]="./Treartment/";
+    
+
+    strcat(filename,user_Id);
+    strcat(filename,".txt");
+    FILE * check=NULL;
+    if(check =fopen(filename,"r")){
+        char lines[2048];
+        printf("\n\t\t\t======= ++++ ====== Your Treartment History ======= ++++ ======\n");
+        while(fgets(lines,sizeof(lines),check)){
+            printf("\t\t\t\t\t%s",lines);
+        }
+         printf("\n\t\t\t=========== ++++ ====== ++++ /t  ++++ ======= ++++ ===========\n");
+   } 
+   else{
+    printf("\n \t\t=========== ++++ ========== You didm't go to TreartMent =========== ++++ ============\n");
+   }
+    }
+
+
+
+// //////////////////////////////////////////////////////////////
+
+Treartment TreartmentDataSplit(){
+  Treartment  tempTreartment;
+  // medicine * tempMedicinePtr =&tempMedicine;
+    char filename[20]="./Treartment/";
+    /*printf("Enter the medicine Name :");*/
+    
+    FILE *f=NULL;
+    if(f=fopen("./storeTreartment.txt","r")){
+
+    char line[1024];
+    while(fscanf(f,"%s",line)!=EOF){
+    char line[1024];
+
+    
+   
+    FILE * tempFile=NULL;
+    char TreartmentInfo[1024];
+    if(tempFile =fopen(line,"r")){
+    int lineCounter=1;
+
+    while(fgets(TreartmentInfo,sizeof(TreartmentInfo),tempFile)){
+
+                if(lineCounter==1){
+                int n=0;
+                char * datas=strtok(TreartmentInfo,":");
+        
+                while(datas !=NULL){
+                if(n==1){
+                strcpy(tempTreartment.record_id,datas);
+            } datas =strtok(NULL,":");
+            n++; }
+
+                }
+
+                 //strcpy(tempMedicine.name,medicineInfo);
+                if(lineCounter==2) 
+                {
+                int n=0;
+                char * datas=strtok(TreartmentInfo,":");
+        
+                while(datas !=NULL){
+                if(n==1){
+                strcpy(tempTreartment.doctor_id,datas);
+            } datas =strtok(NULL,":");
+               n++; 
+            }}
+                
+                
+                //strcpy(tempMedicine.use,medicineInfo);
+                if(lineCounter==3){
+                    
+                int n=0;
+                char * datas=strtok(TreartmentInfo,":");
+        
+                while(datas !=NULL){
+                if(n==1){
+                strcpy(tempTreartment.patient_id,datas);
+            } datas =strtok(NULL,":");
+               n++; 
+            }
+                }
+
+                //strcpy( tempMedicine.date,medicineInfo);
+                if(lineCounter==4) {
+                     // printf("%s",medicineInfo);
+                    int n=0;
+                char * datas=strtok(TreartmentInfo,":");
+           
+                while(datas !=NULL){
+                if(n==1){
+                strcpy(tempTreartment.diagnosis,datas);
+               // tempMedicine.stock = atoi(datas);
+               //printf("%s",datas);
+            } datas =strtok(NULL,":");
+               n++; 
+            }
+
+                }
+                if(lineCounter==5){
+
+                    int n=0;
+                char * datas=strtok(TreartmentInfo,":");
+           
+                while(datas !=NULL){
+                if(n==1){
+                strcpy(tempTreartment.prescription,datas);
+              
+            } datas =strtok(NULL,":");
+               n++; 
+                }
+                
+                
+                //tempMedicine.stock;
+
+                lineCounter++;
+                }
+           
+    }
+            fclose(tempFile);
+        
+    }
+       
+    return(tempTreartment);
+
+    }
+    // printf("%s",tempMedicine.name);
+    // printf("\n%s",tempMedicine.use);
+    // printf("\n%s",tempMedicine.date);
+    // printf("%d",tempMedicine.stock);
+    
+
+    
+
+
+    }
+}
+void dispalyPatien(char user_id[]){
+    Treartment temp = TreartmentDataSplit();
+}
