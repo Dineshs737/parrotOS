@@ -1,2 +1,4 @@
 ./medicine/penadol.txt
 ./medicine/menthol.txt
+./medicine/dinesh.txt
+./medicine/pema.txt

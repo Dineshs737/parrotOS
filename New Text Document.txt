@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Function to generate string IDs
+char* generateStringID(const char* prefix, int id) {
+    char* idStr;
+    int length = snprintf(NULL, 0, "%s%d", prefix, id); // Calculate length of ID string
+    idStr = (char*)malloc(length + 1); // Allocate memory for ID string (+1 for null terminator)
+    snprintf(idStr, length + 1, "%s%d", prefix, id); // Format ID string
+    return idStr;
+}
+
+int main() {
+    const char* prefix = "ID"; // Prefix for string IDs
+    int count = 5; // Number of IDs to generate
+    char* ids[count]; // Array to store generated IDs
+    
+    // Generate string IDs
+    for (int i = 0; i < count; i++) {
+        ids[i] = generateStringID(prefix, i + 1);
+    }
+
+    // Print generated IDs
+    printf("Generated String IDs:\n");
+    for (int i = 0; i < count; i++) {
+        printf("%s\n", ids[i]);
+        free(ids[i]); // Free memory allocated for ID string
+    }
+
+    return 0;
+}

@@ -1,0 +1,5 @@
+Medicine:pema
+use:dkkfef
+Experdate:19/05/2030
+Stock:40
+price:900.000000

@@ -1,0 +1,5 @@
+Medicine:dinesh
+use:jdkjf
+Experdate:12/05/2030
+Stock:300
+price:14.000000
