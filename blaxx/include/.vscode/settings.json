@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "medicinedata.h": "c",
+        "time.h": "c",
+        "suggestion.h": "c"
+    }
+}

@@ -44,7 +44,10 @@ int main(int argc, char const *argv[])
 // StoreSuggestion("dinesh");
  //adminSuggestion();
  //DoctorSuggestion("dinesh");    
- medicineLogin();
+ //medicineLogin();
+ //AdminMedicineLogin();
   //StoreMedicine();
+  //MedicineDoctor();
+  AdminMedicineLogin();
     return 0;
 }

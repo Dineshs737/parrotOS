@@ -69,7 +69,7 @@ void StoreTreartment(char d_name[] ,char p_name[]){
 
  
 
-void adminTreartment(){
+void adminTreartment(){ //display Treartment history admin
 
 FILE *f =NULL;
    f=fopen("storeTreartment.txt","r");
@@ -157,7 +157,7 @@ FILE *f =NULL;
 
 }
 
-void DoctorTreartment(char d_name[]){
+void DoctorTreartment(char d_name[]){//display Treartment history doctor
 
     FILE *f =NULL;
    ;
@@ -258,7 +258,7 @@ void DoctorTreartment(char d_name[]){
 // }
 
 
-void patientTreartment(char p_name[]){
+void patientTreartment(char p_name[]){//display Treartment history patient
 
  FILE *f =NULL;
    f=fopen("storeTreartment.txt","r");

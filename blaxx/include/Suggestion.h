@@ -2,6 +2,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<time.h>
+//#include"./medicineData.h"
 struct  DoctorSuggestionInfo{
     char Suggestion_id[100];
     char doctor_id[100];
@@ -20,6 +21,33 @@ char* generate_id() {
     sprintf(id_string, "%d", id);
     strcat(id_r,id_string);
     return id_r;
+}
+
+void MedicineDoctor(){ //doctor medicine menu
+
+    int op;
+     printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
+     printf("\n\t\t\t\t\t[1]. Create Suggestion\n");
+     printf("\t\t\t\t\t[2]. Display Your Suggestion\n");
+     printf("\t\t\t\t\t[3]. Display Medicine Detail\n");
+     //printf("\t\t\t\t\t[4]. Update Medicine Detail\n");
+     printf("\t\t\t\t\t[4]. Exit\n");
+     printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
+
+    printf("\t\t\t _______________________________________________________\n");
+    printf("\t\t\t\t\t    Eenter Your choice :");
+    scanf("%d",&op);
+    printf("\t\t\t _______________________________________________________\n");
+   
+    switch(op){
+        case 1 :StoreSuggestion("dinesh"); break;
+        case 2 :DoctorSuggestion("dinsh");break;
+        case 3 :adminMedicine();break;
+        
+        case 4 :exit(0);
+    }
+
+
 }
 
 
@@ -63,9 +91,12 @@ void StoreSuggestion(char d_name[]){
     scanf("%d",&choice);
     printf("\n\t\t________________________________________________________\n");
 
-    if(choice==2){ break;
-
+    if(choice==2){ 
+        
      printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
+     //MedicineDoctor();
+     MedicineDoctor();
+   
     
     }
     if(choice>2 || choice <1){ 
@@ -77,6 +108,7 @@ void StoreSuggestion(char d_name[]){
    printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
     
     }
+
     }
   
    
@@ -89,17 +121,19 @@ void StoreSuggestion(char d_name[]){
 
 
 
-void  adminSuggestion(){
+void  adminSuggestion(){ //show Doctor Suggestion
 FILE *f =NULL;
    f=fopen("./storeSuggestion.txt","r");
    if(f==NULL){
-        printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
+    printf("\n\t\t\t___________________________________________________________________________\n");
+    printf("\n\t\t                   Doctor Didn't Suggest Medicine                           \n");
+    printf("\n\t\t\t___________________________________________________________________________\n");
    }
    //int lineCounter=1;
    Suggestion tempSuggestio;
     char line[1024];
             printf("\n\t\t\t_______________________________________________________\n");
-            printf("\t\t\t              Treartment History                       \n");
+            printf("\t\t\t               Doctor Suggestion                      \n");
             printf("\t\t\t_______________________________________________________\n");
     while(fscanf(f,"%s",line)!=EOF){
         int lineCounter=1;
@@ -153,18 +187,20 @@ FILE *f =NULL;
 
           
         
-           printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
+            printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
             printf("\n\t\t\t_______________________________________________________\n");
             printf("\t\t\t              Medicine Information Ended \n");
             printf("\t\t\t_______________________________________________________\n");
    
 }}
 
-void DoctorSuggestion(char d_name[]){
+void DoctorSuggestion(char d_name[]){ // show doctor Suggestions to doctor
 FILE *f =NULL;
    f=fopen("./storeSuggestion.txt","r");
    if(f==NULL){
-        printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
+    printf("\n\t\t\t___________________________________________________________________________\n");
+    printf("\n\t\t                    I Didn't Suggest Medicine                                 \n");
+    printf("\n\t\t\t___________________________________________________________________________\n");
    }
    //int lineCounter=1;
    Suggestion tempSuggestio;
@@ -226,8 +262,9 @@ FILE *f =NULL;
 
            
         }
-           printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
+             printf("\n\t\t\t== == == == == == == == == == == == == == == == == == ==\n");
             printf("\n\t\t\t_______________________________________________________\n");
             printf("\t\t\t                  Suggestions  Ended                    \n");
             printf("\t\t\t_______________________________________________________\n");
+           // MedicineDoctor();
  }
