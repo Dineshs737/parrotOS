@@ -1,0 +1,88 @@
+
+//  void insertAtBeginning(medicine *medicineInput){
+
+//       /* printf("\nname of medicine is %s\n",medicineInput->name);
+//         printf("\nuse  of medicine is %s\n",medicineInput->use);
+//         printf("\nExpire date will be  %s\n",medicineInput->date);
+//         printf("\navalible stock count is %d\n",medicineInput->stock);  */
+
+//     medicine* newMedicine =(medicine*)malloc(sizeof(medicine));
+//     if(newMedicine==NULL) printf("out of memory");
+//     printf("\n\ncreated newMedicine \n\n");
+//     strcpy(newMedicine->name,medicineInput->name);
+//     strcpy(newMedicine->use,medicineInput->use);
+//     strcpy(newMedicine->date,medicineInput->date);
+//     newMedicine->stock =medicineInput->stock;
+
+
+//     if(head==NULL){
+//         newMedicine->next =NULL;
+//         head =newMedicine;
+//     }
+//     else{
+//         newMedicine ->next =head;
+//         head =newMedicine;
+
+   
+
+//     }
+
+
+//         /*printf("\nname of medicine is %s\n", newMedicine->name);
+//         printf("\nuse  of medicine is %s\n", newMedicine->use);
+//         printf("\nExpire date will be  %s\n", newMedicine->date);
+//         printf("\navalible stock count is %d\n", newMedicine->stock);*/
+
+//  }
+
+ /*void  instertPosition(medicine *medicineInput,int pos){
+    if(pos==0){
+        insertAtBeginning(medicineInput);
+    }
+*/
+        
+  /*  int i=1;
+    medicine* newMedicine =(medicine*)malloc(sizeof(medicine));
+    if(newMedicine==NULL) printf("out of memory");
+
+
+    strcpy(newMedicine->name,medicineInput->name);
+    strcpy(newMedicine->use,medicineInput->use);
+    strcpy(newMedicine->date,medicineInput->date);
+    newMedicine->stock =medicineInput->stock;
+    medicine *temp =head;
+    for(i=1;i<=pos-1;i++){
+        temp= temp->next;
+        if(temp==NULL){
+            printf("Invalid position lsat \n");
+            return;
+        }
+    }
+    
+    newMedicine->next =temp->next;
+    temp->next = newMedicine;
+       /*printf("\nname of medicine is %s\n", newMedicine->name);
+        printf("\nuse  of medicine is %s\n", newMedicine->use);
+        printf("\nExpire date will be  %s\n", newMedicine->date);
+        printf("\navalible stock count is %d\n", newMedicine->stock);*/
+
+
+/* void  display() {
+    if(head==NULL){
+        printf("\nList is empty\n");
+    }
+     medicine* temp=head;
+     printf("\n=====  + ======#  \t\t\t # =====  + ======  \n");
+     while(temp!=NULL)
+     {
+       
+        printf("\n\nname of medicine is %s\n",temp->name);
+        printf("use  of medicine is %s\n ",temp->use);
+        printf("Expire date will be  %s\n ",temp->date);
+        printf("avalible stock count is %d\n\n",temp->stock);
+      
+        temp = temp->next;
+     }
+     printf("\n=====  + ======#  \t\t\t # =====  + ======  \n");
+
+ }*/

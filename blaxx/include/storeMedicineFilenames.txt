@@ -1,0 +1,2 @@
+./medicine/sd.txt
+./medicine/sxc.txt

@@ -1,0 +1,5 @@
+Medicine:penadol
+use:f..
+Experdate:12/3/2024
+Stock:100
+price:10.000000
